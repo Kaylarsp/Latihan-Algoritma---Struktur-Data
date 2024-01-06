@@ -1,4 +1,5 @@
 public class barang {
+    // ga bisa di run karena ga ada method main nya
     String namaBarang, jenisBarang;
     int stok, hargaSatuan;
 
