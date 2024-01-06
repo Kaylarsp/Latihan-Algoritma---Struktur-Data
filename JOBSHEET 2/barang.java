@@ -3,7 +3,19 @@ public class barang {
     String namaBarang, jenisBarang;
     int stok, hargaSatuan;
 
+    barang() {
+
+    }
+
+    barang(String nm, String jn, int st, int hs) {
+        namaBarang = nm;
+        jenisBarang = jn;
+        stok = st;
+        hargaSatuan = hs;
+    }
+
     void tampilBarang() {
+        System.out.println();
         System.out.println("Nama barang  : " + namaBarang);
         System.out.println("Jenis barang : " + jenisBarang);
         System.out.println("Stok barang  : " + stok);
