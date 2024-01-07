@@ -3,10 +3,13 @@ import java.util.Scanner;
 class ArrayObject {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        PersegiPanjang[] ppArray = new PersegiPanjang[3];
 
+        System.out.print("\nMasukkan panjang array : ");
+        int n = sc.nextInt();
+        PersegiPanjang[] ppArray = new PersegiPanjang[n];
+        
         // menerima input
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < n; i++) {
             ppArray[i] = new PersegiPanjang();
             System.out.println("\nPersegi panjang ke-" + i);
             System.out.print("Masukkan panjang : ");
@@ -16,7 +19,7 @@ class ArrayObject {
         }
 
         // mengakses isi array ppArray dan menampilkannya
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < n; i++) {
             System.out.println("\nPersegi panjang ke-" + i);
             System.out.println("Panjang : " + ppArray[i].panjang + "\nLebar   : " + ppArray[i].lebar);
         }
@@ -44,3 +47,4 @@ public class PersegiPanjang {
     public int panjang;
     public int lebar;
 }
+
