@@ -1,7 +1,4 @@
-public class PersegiPanjang {
-    public int panjang;
-    public int lebar;
-
+class ArrayObject {
     public static void main(String[] args) {
         PersegiPanjang[] ppArray = new PersegiPanjang[3];
     
@@ -22,4 +19,9 @@ public class PersegiPanjang {
         System.out.println("Persegi panjang ke-1, panjang :  " + ppArray[1].panjang + ", lebar : " + ppArray[1].lebar);
         System.out.println("Persegi panjang ke-2, panjang : " + ppArray[2].panjang + ", lebar : " + ppArray[2].lebar);
     }
+}
+
+public class PersegiPanjang {
+    public int panjang;
+    public int lebar;
 }
