@@ -4,6 +4,7 @@ class ArrayObject {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        // Modifikasi kode program agar length array menjadi inputan
         System.out.print("\nMasukkan panjang array : ");
         int n = sc.nextInt();
         PersegiPanjang[] ppArray = new PersegiPanjang[n];
