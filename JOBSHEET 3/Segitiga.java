@@ -15,7 +15,6 @@ public class Segitiga {
     public double hitungKeliling() {
         return 2 * (0.5 * alas * tinggi);
     }
-
 }
 
 class ArraySegitiga {
