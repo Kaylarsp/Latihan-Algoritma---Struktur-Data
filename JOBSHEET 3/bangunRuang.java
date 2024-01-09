@@ -1,8 +1,5 @@
 import java.util.Scanner;
 
-/**
- * bangunRuang
- */
 public class bangunRuang {
 
     public static void main(String[] args) {
@@ -33,7 +30,26 @@ public class bangunRuang {
             case 2:
                 System.out.print("Masukkan banyak balok : ");
                 int n1 = sc.nextInt();
+                Balok[] balokArray = new Balok[n1];
 
+                // menerima input
+                for (int i = 0; i < n1; i++) {
+                    System.out.println("\nBalok ke-" + (i+1));
+                    System.out.print("Masukkan panjang : ");
+                    int panjang = sc.nextInt();
+                    System.out.print("Masukkan lebar   : ");
+                    int lebar = sc.nextInt();
+                    System.out.print("Masukkan tinggi  : ");
+                    int tinggi = sc.nextInt();
+                    balokArray[i] = new Balok(panjang, lebar, tinggi); // inisialisasi
+                }
+                // mengakses array dan menampilkannya
+                for (int i = 0; i < n1; i++) {
+                    System.out.println("\nBalok ke-" + (i+1));
+                    System.out.println("Luas permukaan : " + balokArray[i].luasPermukaanBalok());
+                    System.out.println("Volume balok   : " + balokArray[i].hitungVolumeBalok());
+                }
+                break;
             default:
                 break;
         }
@@ -73,4 +89,12 @@ class Balok {
     public int hitungVolumeBalok() {
         return panjang * lebar * tinggi;
     }
+
+    public int luasPermukaanBalok() {
+        return 2 * ((panjang*lebar) + (lebar*tinggi) + (tinggi*panjang));
+    }
 }
+
+// class PrismaSegitiga {
+//     public int
+// }
