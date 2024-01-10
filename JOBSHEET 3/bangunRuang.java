@@ -4,7 +4,7 @@ public class bangunRuang {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("\n1. Kubus \n2. Balok \n3. Prisma Segitiga \n\nMasukkan pilihan anda : ");
+        System.out.print("\n1. Kubus \n2. Balok \n3. Bola \n\nMasukkan pilihan anda : ");
         int choice = sc.nextInt();
         switch (choice) {
             case 1:
@@ -43,6 +43,7 @@ public class bangunRuang {
                     int tinggi = sc.nextInt();
                     balokArray[i] = new Balok(panjang, lebar, tinggi); // inisialisasi
                 }
+
                 // mengakses array dan menampilkannya
                 for (int i = 0; i < n1; i++) {
                     System.out.println("\nBalok ke-" + (i+1));
@@ -50,6 +51,25 @@ public class bangunRuang {
                     System.out.println("Volume balok   : " + balokArray[i].hitungVolumeBalok());
                 }
                 break;
+            case 3:
+                System.out.print("Masukkan banyak bola  : ");
+                int n2 = sc.nextInt();
+                Bola[] bolaArray = new Bola[n2];
+
+                // menerima input
+                for (int i = 0; i < n2; i++) {
+                    System.out.println("\nBola ke-" + (i+1));
+                    System.out.print("Masukkan jari-jari : ");
+                    int jarijari = sc.nextInt();
+                    bolaArray[i] = new Bola(jarijari);
+                }
+
+                // mengakses array dan menampilkannya
+                for (int i = 0; i < n2; i++) {
+                    System.out.println("\nBola ke-" + (i+1));
+                    System.out.println("Luas permukaan : " + bolaArray[i].luasPermukaanBola());
+                    System.out.println("Volume bola    : " + bolaArray[i].hitungVolumeBola());
+                }
             default:
                 break;
         }
@@ -95,6 +115,19 @@ class Balok {
     }
 }
 
-// class PrismaSegitiga {
-//     public int
-// }
+class Bola {
+    public int jarijari;
+
+    // Konstruktor
+    public Bola(int r) {
+        jarijari = r;
+    }
+
+    public double hitungVolumeBola() {
+        return (4/3) * 3.14 * jarijari * jarijari * jarijari;
+    }
+
+    public double luasPermukaanBola() {
+        return 4 * 3.14 * jarijari * jarijari;
+    }
+}
