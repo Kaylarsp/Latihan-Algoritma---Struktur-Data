@@ -2,6 +2,13 @@ import java.util.Scanner;
 
 public class Pangkat {
     public int nilai, pangkat;
+
+    // add konstruktor
+    public Pangkat(int nil, int pgkt) {
+        nilai = nil;
+        pangkat = pgkt;
+    }
+
     public int pangkatBF(int a, int n) {
         int hasil = 1;
         for (int i = 0; i < n; i++) {
@@ -32,7 +39,7 @@ class MainPangkat {
         Pangkat[] png = new Pangkat[elemen];
 
         for (int i = 0; i < elemen; i++) {
-            png[i] = new Pangkat();
+            png[i] = new Pangkat(i, i);
             System.out.print("Masukkan nilai yang akan dipangkatkan ke-" + (i + 1) + " : ");
             png[i].nilai = sc.nextInt();
             System.out.print("Masukkan nilai pemangkat ke-" + (i + 1) + " : ");
