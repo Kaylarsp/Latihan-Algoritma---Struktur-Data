@@ -4,14 +4,20 @@ import java.util.Random;
 public class SelectionSort {
     public static void main(String[] args) {
 
-        int[] numbers = new int[10];
+        int[] numbers = new int[100000];
         Random random = new Random();
         for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = random.nextInt(10000);
+            numbers[i] = random.nextInt(100000);
         }
 
+        System.out.println("\nUnsorted array : ");
         System.out.println(Arrays.toString(numbers));
+        long startTime = System.currentTimeMillis();
         selectionSort(numbers);
+        long endTime = System.currentTimeMillis();
+        System.out.println("\nSorted array : ");
+        System.out.println(Arrays.toString(numbers));
+        System.out.println("\nTook " + (endTime - startTime) + "ms");
     }
 
     private static void selectionSort(int[] numbers) {
@@ -20,9 +26,20 @@ public class SelectionSort {
         for (int i = 0; i < length; i++) {
             int min = numbers[i];
             int indexOfMin = i;
-            for (int j = 0; j < length; j++) {
-                
+            for (int j = i + 1; j < length; j++) {
+                if (numbers[j] < min) {
+                    min = numbers[j];
+                    indexOfMin = j;
+                }
             }
+            swap(numbers, i, indexOfMin);
         }
+    }
+
+    private static void swap(int[] numbers, int a, int b) {
+        // temp : temporary hold the element while the swap is processing
+        int temp = numbers[a];
+        numbers[a] = numbers[b];
+        numbers[b] = temp;
     }
 }
