@@ -4,7 +4,7 @@ import java.util.Random;
 public class SelectionSort {
     public static void main(String[] args) {
 
-        int[] numbers = new int[100000];
+        int[] numbers = new int[100];
         Random random = new Random();
         for (int i = 0; i < numbers.length; i++) {
             numbers[i] = random.nextInt(100000);
