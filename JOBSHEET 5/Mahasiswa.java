@@ -41,6 +41,10 @@ public class Mahasiswa {
         System.out.println("\nData mahasiswa setelah sorting asc berdasarkan ipk  : \n");
         list.selectionSort();
         list.tampil();
+
+        System.out.println("\nData mahasiswa setelah sorting asc berdasarkan ipk  : \n");
+        list.insertionSort();
+        list.tampil();
     }
 }
 
@@ -89,6 +93,18 @@ class DaftarMahasiswaBerprestasi {
             Mahasiswa tmp = listMhs[idxMin];
             listMhs[idxMin] = listMhs[i];
             listMhs[i] = tmp;
+        }
+    }
+
+    void insertionSort(){
+        for (int i = 1; i < listMhs.length; i++) {
+            Mahasiswa temp = listMhs[i];
+            int j = i;
+            while (j > 0 && listMhs[j - 1].ipk > temp.ipk) {
+                listMhs[j] = listMhs[j - 1];
+                j--;
+            }
+            listMhs[j] = temp;
         }
     }
 }
