@@ -34,16 +34,20 @@ public class Mahasiswa {
         System.out.println("\nData mahasiswa sebelum sorting : \n");
         list.tampil();
 
-        System.out.println("\nData mahasiswa setelah sorting desc berdasarkan ipk : \n");
+        System.out.println("\nData mahasiswa setelah bubble sorting desc berdasarkan ipk     : \n");
         list.bubbleSort();
         list.tampil();
 
-        System.out.println("\nData mahasiswa setelah sorting asc berdasarkan ipk  : \n");
+        System.out.println("\nData mahasiswa setelah selection sorting asc berdasarkan ipk   : \n");
         list.selectionSort();
         list.tampil();
 
-        System.out.println("\nData mahasiswa setelah sorting asc berdasarkan ipk  : \n");
-        list.insertionSort();
+        System.out.println("\nData mahasiswa setelah insertion sorting asc berdasarkan ipk   : \n");
+        list.insertionSort(true);
+        list.tampil();
+
+        System.out.println("\nData mahasiswa seterlah insertion sorting desc berdasarkan ipk : \n");
+        list.insertionSort(false);
         list.tampil();
     }
 }
@@ -103,6 +107,25 @@ class DaftarMahasiswaBerprestasi {
             while (j > 0 && listMhs[j - 1].ipk > temp.ipk) {
                 listMhs[j] = listMhs[j - 1];
                 j--;
+            }
+            listMhs[j] = temp;
+        }
+    }
+
+    void insertionSort(boolean asc){
+        for (int i = 1; i < listMhs.length; i++) {
+            Mahasiswa temp = listMhs[i];
+            int j = i;
+            if (asc) {
+                while (j > 0 && listMhs[j - 1].ipk > temp.ipk) {
+                    listMhs[j] = listMhs[j - 1];
+                    j--;
+                }
+            } else {
+                while (j > 0 && listMhs[j - 1].ipk < temp.ipk) {
+                    listMhs[j] = listMhs[j - 1];
+                    j--;
+                }
             }
             listMhs[j] = temp;
         }
