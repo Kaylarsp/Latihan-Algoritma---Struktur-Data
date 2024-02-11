@@ -52,7 +52,7 @@ public class Mahasiswa {
         System.out.println();
         System.out.println("---------------------------------------------------------------");
         System.out.println("---------------------------------------------------------------");
-        System.out.println("Pencarian data");
+        System.out.println("\nPencarian data");
         System.out.println("Masukkan nim mahasiswa yang dicari");
         System.out.print("NIM\t: ");
         int cari = s.nextInt();
