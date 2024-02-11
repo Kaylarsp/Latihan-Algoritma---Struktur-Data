@@ -49,13 +49,14 @@ public class Mahasiswa {
         System.out.println("Data keseluruhan mahasiswa : ");
         data.tampil();
         
+        System.out.println();
         System.out.println("---------------------------------------------------------------");
         System.out.println("---------------------------------------------------------------");
-        System.out.println("Pencarian data : ");
+        System.out.println("Pencarian data");
         System.out.println("Masukkan nim mahasiswa yang dicari");
-        System.out.print("NIM : ");
+        System.out.print("NIM\t: ");
         int cari = s.nextInt();
-        System.out.println("Menggunakan sequential search");
+        System.out.println("\nMenggunakan sequential search\n");
         int posisi = data.FindSeqSearch(cari);
         
         data.TampilPosisi(cari, posisi);
@@ -96,7 +97,7 @@ class PencarianMhs {
 
     void TampilPosisi(int x, int pos) {
         if (pos != -1) {
-            System.out.println("Data : " + x + " ditemukan pada indeks " + pos);
+            System.out.println("Data\t: " + x + " ditemukan pada indeks " + pos);
         } else {
             System.out.println("Data : " + x + " tidak ditemukan");
         }
@@ -109,10 +110,7 @@ class PencarianMhs {
             System.out.println("Umur\t : " + listMhs[pos].umur);
             System.out.println("IPK\t : " + listMhs[pos].ipk);
         } else {
-            System.out.println("Data : " + x + " tidak ditemukan");
+            System.out.println("Data\t: " + x + " tidak ditemukan");
         }
     }
 }
-
-// class MahasiswaMain {
-// }
