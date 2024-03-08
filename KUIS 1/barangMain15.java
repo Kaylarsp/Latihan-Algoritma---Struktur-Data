@@ -36,7 +36,6 @@ public class barangMain15 {
                 case 4:
                     System.exit(0);
                     break;
-            
                 default:
                     break;
             }

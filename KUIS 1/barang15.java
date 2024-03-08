@@ -19,4 +19,15 @@ public class barang15 {
             System.out.printf("%-10s %-10s %-10s Rp. %-10s\n" , data[i].namaBarang, data[i].kodeBarang, data[i].stok, data[i].harga);
         }
     }
+
+    public static boolean checkKode(String kodeBarang, barang15[] data) {
+        boolean result = false;
+        for(int i =0; i<data.length; i++) {
+            // ngecek kodeBarang nya bener apa engga
+            if(data[i].kodeBarang.equalsIgnoreCase(kodeBarang)){
+                result =  true;
+            }
+        }
+        return result;
+    }
 }
