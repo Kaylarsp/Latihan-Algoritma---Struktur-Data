@@ -5,6 +5,7 @@ public class barangMain15 {
         Scanner sc = new Scanner(System.in);
 
         barang15 barang = new barang15(null, null, 0, 0);
+        transaksiBarang15 pembelian = new transaksiBarang15();
 
         barang15[] data = new barang15[5];
         data[0] = new barang15("BUKU" , "B01" , 100, 15000);
@@ -30,8 +31,13 @@ public class barangMain15 {
                     barang.tampilBarang(data);
                     break;
                 case 2:
+                    System.out.println("-------------------------------------------");
+                    System.out.print("Masukkan kode barang : ");
+                    String kodeBarang = sc.next();
+                    barang.checkKode(kodeBarang, data);
                     break;
                 case 3:
+                    pembelian.tampilkanPembelian(data);
                     break;
                 case 4:
                     System.exit(0);

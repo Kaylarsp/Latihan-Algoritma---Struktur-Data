@@ -20,13 +20,19 @@ public class barang15 {
         }
     }
 
-    public static boolean checkKode(String kodeBarang, barang15[] data) {
+    public boolean checkKode(String kodeBarang, barang15[] data) {
         boolean result = false;
+        boolean found = false;
         for(int i =0; i<data.length; i++) {
             // ngecek kodeBarang nya bener apa engga
             if(data[i].kodeBarang.equalsIgnoreCase(kodeBarang)){
                 result =  true;
+                found = true;
+                System.out.println("Nama barang : " + data[i].namaBarang);
             }
+        }
+        if (!found) {
+            System.out.println("Kode barang tidak ditemukan");
         }
         return result;
     }
